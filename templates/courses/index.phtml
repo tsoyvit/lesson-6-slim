@@ -1,0 +1,32 @@
+<!--<table>-->
+<!--    --><?php //foreach ($courses as $course): ?>
+<!--        <tr>-->
+<!--            <td>-->
+<!--                --><?php //= $course['id'] ?>
+<!--            </td>-->
+<!--            <td>-->
+<!--                --><?php //= $course['name'] ?>
+<!--            </td>-->
+<!--        </tr>-->
+<!--    --><?php //endforeach ?>
+<!--</table>-->
+<!--<!-- END -->-->
+
+
+<!--                      lesson 15-->
+<!--==========================================================-->
+<?php
+/**
+ * @var $courses
+ */
+
+?>
+
+<a href="/courses/new">Новый курс</a>
+
+<?php foreach ($courses as $course): ?>
+    <div>
+        <?= htmlspecialchars($course['title']) ?>
+    </div>
+<?php endforeach ?>
+

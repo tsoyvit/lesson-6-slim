@@ -1,0 +1,46 @@
+<?php
+/**
+ * @var $course
+ */
+
+?>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="/courses" method="post">
+    <div>
+        <label>
+            Paid
+            <select name="course[paid]">
+                <option value="">Select</option>
+                <option <?= ($course['paid'] ?? null) === true ? 'selected' : '' ?> value="true">true</option>
+                <option <?= ($course['paid'] ?? null) === false ? 'selected' : '' ?> value="false">false</option>
+            </select>
+        </label>
+        <?php if (isset($errors['paid'])) : ?>
+        <div><?= $errors['paid'] ?></div>
+        <?php endif; ?>
+    </div>
+    <div>
+        <label>
+            Title
+            <input type="text" name="course[title]" value="<?= htmlspecialchars($course['title']) ?>">
+        </label>
+        <?php if (isset($errors['title'])) : ?>
+        <div><?= $errors['title'] ?></div>
+        <?php endif; ?>
+    </div>
+    <button type="submit">Создать курс</button>
+</form>
+
+</body>
+</html>
